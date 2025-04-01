@@ -1,0 +1,77 @@
+[
+  {
+    "example_id": 1,
+    "product_info": {
+      "name": "Home Insurance",
+      "policy_number": "HI-12345"
+    },
+    "dialog": [
+      {
+        "time": "00:00",
+        "text": "Agent: Hello, thank you for calling our insurance helpline. How may I assist you today?"
+      },
+      {
+        "time": "00:05",
+        "text": "Customer: Hi, I'm calling about my home insurance policy. I need to understand the coverage for water damage."
+      },
+      {
+        "time": "00:12",
+        "text": "Agent: I'd be happy to help you with that. Could you please provide your policy number so I can look up the details?"
+      },
+      {
+        "time": "00:18",
+        "text": "Customer: Sure, it's HI-12345."
+      }
+    ]
+  },
+  {
+    "example_id": 2,
+    "product_info": {
+      "name": "Auto Insurance",
+      "policy_number": "AI-67890"
+    },
+    "dialog": [
+      {
+        "time": "00:00",
+        "text": "Agent: Good morning, this is the claims department. How can I help you today?"
+      },
+      {
+        "time": "00:05",
+        "text": "Customer: Hello, I was in a minor accident yesterday and need to file a claim."
+      },
+      {
+        "time": "00:10",
+        "text": "Agent: I'm sorry to hear about your accident. I'll help you file that claim right away. Can I have your policy number please?"
+      },
+      {
+        "time": "00:16",
+        "text": "Customer: Yes, my policy number is AI-67890."
+      }
+    ]
+  },
+  {
+    "example_id": 3,
+    "product_info": {
+      "name": "Life Insurance",
+      "policy_number": "LI-24680"
+    },
+    "dialog": [
+      {
+        "time": "00:00",
+        "text": "Agent: Thank you for calling our life insurance department. How may I assist you?"
+      },
+      {
+        "time": "00:06",
+        "text": "Customer: Hi, I'm interested in understanding the beneficiary options for my policy."
+      },
+      {
+        "time": "00:12",
+        "text": "Agent: I'd be happy to explain the beneficiary options. May I have your policy number please?"
+      },
+      {
+        "time": "00:18",
+        "text": "Customer: Of course, it's LI-24680."
+      }
+    ]
+  }
+]
