@@ -1,9 +1,11 @@
-# My Open RAG Project
+# RAG Document
 
 A FastAPI application that demonstrates **Retrieval-Augmented Generation (RAG)** concepts, combining:
 - Audio/Video transcription via [AssemblyAI](https://www.assemblyai.com/),
 - Semantic search over text sections with [FAISS](https://github.com/facebookresearch/faiss),
 - Optional usage of LLaMA-based embeddings or a **fake** embeddings class.
+
+<img width="971" alt="截屏2025-04-02 01 09 57" src="https://github.com/user-attachments/assets/0eaaf9e7-4150-4cb5-b5ac-040d636942ed" />
 
 ## Features
 
@@ -16,8 +18,8 @@ A FastAPI application that demonstrates **Retrieval-Augmented Generation (RAG)**
 
 1. **Clone** this repository:
     ```bash
-    git clone https://github.com/YourUserName/my-open-rag-project.git
-    cd my-open-rag-project
+    git clone https://github.com/boringresearch/rag-demo.git
+    cd rag-demo
     ```
 
 2. **Create and activate** a virtual environment (recommended):
@@ -133,10 +135,6 @@ my-open-rag-project/
 ├── examples/
 └── uploads/
 ```
-
-## Contributing
-
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
