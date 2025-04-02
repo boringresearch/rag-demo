@@ -1,76 +1,893 @@
 [
   {
     "example_id": 1,
+    "source_file": "results/file-4613456162703484951.txt",
     "product_info": {
-      "name": "Home Insurance",
-      "policy_number": "HI-12345"
+      "name": "Fridge & Freezer Cover",
+      "policy_number": "FF-DG-2024-REF483876",
+      "policy_status": "Active (Under Investigation)"
     },
     "dialog": [
       {
         "time": "00:00",
-        "text": "Agent: Hello, thank you for calling our insurance helpline. How may I assist you today?"
+        "text": "Agent: Good morning, D&G Appliance Claims, how can I assist?",
+        "tag": {}
       },
       {
         "time": "00:05",
-        "text": "Customer: Hi, I'm calling about my home insurance policy. I need to understand the coverage for water damage."
+        "text": "Customer: My freezer's packed in! I need a full replacement immediately. This is urgent - I've lost hundreds in food.",
+        "tag": {}
       },
       {
         "time": "00:12",
-        "text": "Agent: I'd be happy to help you with that. Could you please provide your policy number so I can look up the details?"
+        "text": "Agent: I'm sorry to hear that, Mr. Wilson. Let me pull up your policy... REF483876. When did this occur?",
+        "tag": {}
       },
       {
-        "time": "00:18",
-        "text": "Customer: Sure, it's HI-12345."
+        "time": "00:20",
+        "text": "Customer: Two days ago. Came downstairs to a pool of water and everything defrosted. Completely unusable now. And the supply of electricity has been cut.",
+        "tag": {}
+      },
+      {
+        "time": "00:28",
+        "text": "Agent: Any error codes or warning lights before this happened?",
+        "tag": {}
+      },
+      {
+        "time": "00:32",
+        "text": "Customer: *pause* Maybe some odd noises last week? Not sure. It's a 2019 GE model - you should have all that in your records.",
+        "tag": {}
+      },
+      {
+        "time": "00:40",
+        "text": "Agent: Our records show your policy includes accidental damage. Have there been any recent impacts or spills?",
+        "tag": {}
+      },
+      {
+        "time": "00:47",
+        "text": "Customer: Well... *sigh* My grandson might have knocked a drink into the control panel last month. Could that do it?",
+        "tag": {}
+      },
+      {
+        "time": "00:55",
+        "text": "Agent: Liquid damage would be considered accidental. Did you report this when it happened?",
+        "tag": {}
+      },
+      {
+        "time": "01:02",
+        "text": "Customer: Didn't think it was relevant then. But now it's completely dead! I need a new unit by weekend.",
+        "tag": {}
+      },
+      {
+        "time": "01:10",
+        "text": "Agent: Let me note that. First, we'll need: 1) Original purchase receipt 2) Photos of damage 3) Model/serial number",
+        "tag": {}
+      },
+      {
+        "time": "01:18",
+        "text": "Customer: Receipt's long gone. It's the GE FUF14... something. Look, can't you just process this? I'm a loyal customer!",
+        "tag": {}
+      },
+      {
+        "time": "01:27",
+        "text": "Agent: Without proof of purchase, we need at least the serial plate photo. When did the liquid spill occur exactly?",
+        "tag": {}
+      },
+      {
+        "time": "01:35",
+        "text": "Customer: Maybe... 3 weeks back? 15th October? The unit worked fine until Tuesday.",
+        "tag": {}
+      },
+      {
+        "time": "01:42",
+        "text": "Agent: *typing* Our system shows you upgraded to accidental damage cover on October 12th. Convenient timing.",
+        "tag": {}
+      },
+      {
+        "time": "01:50",
+        "text": "Customer: What's that supposed to mean? Are you accusing me of something?",
+        "tag": {}
+      },
+      {
+        "time": "01:55",
+        "text": "Agent: Not at all, sir. Standard procedure. Let's arrange an inspection - our engineer can visit tomorrow.",
+        "tag": {}
+      },
+      {
+        "time": "02:03",
+        "text": "Customer: Tomorrow? I need this sorted today! The smell is unbearable - I've already disposed of the unit.",
+        "tag": {}
+      },
+      {
+        "time": "02:10",
+        "text": "Agent: You disposed of it before assessment? That violates policy section 4.2. How was it removed?",
+        "tag": {}
+      },
+      {
+        "time": "02:17",
+        "text": "Customer: Council took it this morning. Had to pay £50 removal fee - I expect reimbursement too.",
+        "tag": {}
+      },
+      {
+        "time": "02:24",
+        "text": "Agent: *pulls up street view* But Mr. Wilson, Google shows your house has external basement access. Why not store it there for inspection?",
+        "tag": {}
+      },
+      {
+        "time": "02:33",
+        "text": "Customer: *long pause* I... didn't think of that. Just wanted it gone. Look, are you paying out or not?",
+        "tag": {}
+      },
+      {
+        "time": "02:41",
+        "text": "Agent: Without the unit or purchase proof, we can only offer £300 goodwill. Full replacement requires verification.",
+        "tag": {}
+      },
+      {
+        "time": "02:49",
+        "text": "Customer: £300? It cost £650 new! This is robbery! I want to escalate to your supervisor!",
+        "tag": {}
+      },
+      {
+        "time": "02:56",
+        "text": "Agent: Of course. While I connect you, please email any remaining photos of the damage or disposal paperwork.",
+        "tag": {}
+      },
+      {
+        "time": "03:04",
+        "text": "Customer: Fine. But if this isn't resolved today, I'll go to the Financial Ombudsman!",
+        "tag": {}
+      },
+      {
+        "time": "03:10",
+        "text": "Agent: Noted. Please hold for my manager. *mutes* (Internal note: Multiple red flags - upgraded coverage before incident, disposed evidence, no documentation. Recommend fraud investigation.)",
+        "tag": {}
       }
     ]
   },
   {
     "example_id": 2,
+    "source_file": "results/file--2047928052352286507.txt",
     "product_info": {
-      "name": "Auto Insurance",
-      "policy_number": "AI-67890"
+      "name": "Advanced Appliance Cover - Laundry",
+      "policy_number": "APPL-DG-20240215-5572",
+      "policy_status": "Active (Under Investigation)"
     },
     "dialog": [
       {
         "time": "00:00",
-        "text": "Agent: Good morning, this is the claims department. How can I help you today?"
+        "text": "Agent: D&G Appliance Claims, how can I help?",
+        "tag": {}
       },
       {
         "time": "00:05",
-        "text": "Customer: Hello, I was in a minor accident yesterday and need to file a claim."
+        "text": "Customer: My tumble dryer stopped working. I need a replacement immediately.",
+        "tag": {}
       },
       {
         "time": "00:10",
-        "text": "Agent: I'm sorry to hear about your accident. I'll help you file that claim right away. Can I have your policy number please?"
+        "text": "Agent: Let me pull up your policy... Ms. Collins? When did the issue start?",
+        "tag": {}
       },
       {
-        "time": "00:16",
-        "text": "Customer: Yes, my policy number is AI-67890."
+        "time": "00:15",
+        "text": "Customer: Yesterday! It just made a burning smell and died.",
+        "tag": {
+          "mild_warning": "Immediate demand for replacement"
+        }
+      },
+      {
+        "time": "00:20",
+        "text": "Agent: Have you attempted any repairs through the manufacturer's warranty?",
+        "tag": {}
+      },
+      {
+        "time": "00:25",
+        "text": "Customer: The warranty expired last month. Just process my claim.",
+        "tag": {}
+      },
+      {
+        "time": "00:30",
+        "text": "Agent: We'll need an engineer inspection first-",
+        "tag": {}
+      },
+      {
+        "time": "00:35",
+        "text": "Customer: That's ridiculous! I paid for coverage!",
+        "tag": {
+          "warning": "Resistance to verification"
+        }
+      },
+      {
+        "time": "00:00",
+        "text": "Agent: Thank you for calling D&G, reference REF020333. How can I assist?",
+        "tag": {}
+      },
+      {
+        "time": "00:05",
+        "text": "Customer: My dryer's failed again! I need another replacement.",
+        "tag": {}
+      },
+      {
+        "time": "00:10",
+        "text": "Agent: Our records show we replaced this unit in June. What's the current issue?",
+        "tag": {}
+      },
+      {
+        "time": "00:15",
+        "text": "Customer: Same problem - overheating and burning smell. It's dangerous!",
+        "tag": {}
+      },
+      {
+        "time": "00:20",
+        "text": "Agent: When did you first notice this recurrence?",
+        "tag": {}
+      },
+      {
+        "time": "00:25",
+        "text": "Customer: Uh... last week. Maybe two weeks ago?",
+        "tag": {
+          "critical": "Vague timeline"
+        }
+      },
+      {
+        "time": "05:00",
+        "text": "Agent: Let me check service records... Our engineer report says the replacement unit was installed August 15th.",
+        "tag": {}
+      },
+      {
+        "time": "05:05",
+        "text": "Customer: Yes, but it broke down quickly!",
+        "tag": {}
+      },
+      {
+        "time": "05:10",
+        "text": "Agent: The replacement has its own 12-month warranty. Have you contacted Hotpoint?",
+        "tag": {}
+      },
+      {
+        "time": "05:15",
+        "text": "Customer: Their service is terrible! I want D&G to handle this!",
+        "tag": {
+          "warning": "Avoiding manufacturer"
+        }
+      },
+      {
+        "time": "10:00",
+        "text": "Agent: Our system shows you requested a refund instead of repair during the first claim. Why?",
+        "tag": {}
+      },
+      {
+        "time": "10:05",
+        "text": "Customer: I needed money for emergencies! That's irrelevant!",
+        "tag": {
+          "critical": "Financial motivation"
+        }
+      },
+      {
+        "time": "15:00",
+        "text": "Agent: The engineer needs to inspect-",
+        "tag": {}
+      },
+      {
+        "time": "15:03",
+        "text": "Customer: No! You'll just stall! Process it now!",
+        "tag": {
+          "warning": "Blocking investigation"
+        }
       }
     ]
   },
   {
     "example_id": 3,
+    "source_file": "results/file-2763056243860300101.txt",
     "product_info": {
-      "name": "Life Insurance",
-      "policy_number": "LI-24680"
+      "name": "Appliance Care Plan",
+      "policy_number": "ACP-DG-20240115-8842",
+      "policy_status": "Active (Under Investigation)"
     },
     "dialog": [
       {
         "time": "00:00",
-        "text": "Agent: Thank you for calling our life insurance department. How may I assist you?"
+        "text": "Agent: Thank you for calling D&G Appliance Care, this is Emily. How can I assist?",
+        "tag": {}
       },
       {
-        "time": "00:06",
-        "text": "Customer: Hi, I'm interested in understanding the beneficiary options for my policy."
+        "time": "00:05",
+        "text": "Customer: I need to claim on my policy - my Bosch dishwasher is flooding everywhere!",
+        "tag": {}
       },
       {
-        "time": "00:12",
-        "text": "Agent: I'd be happy to explain the beneficiary options. May I have your policy number please?"
+        "time": "00:10",
+        "text": "Agent: I'm sorry to hear that. Let me pull up your policy... Mr. Wilson? Policy taken out January 2024?",
+        "tag": {}
+      },
+      {
+        "time": "00:15",
+        "text": "Customer: Yes that's right. The water's ruining my kitchen floors!",
+        "tag": {}
+      },
+      {
+        "time": "00:20",
+        "text": "Agent: First, is everyone safe? Have you shut off the water supply?",
+        "tag": {}
+      },
+      {
+        "time": "00:25",
+        "text": "Customer: Yes I turned it off, but I need a technician TODAY. When can you send someone?",
+        "tag": {
+          "warning": "Urgent demand for immediate service"
+        }
+      },
+      {
+        "time": "00:30",
+        "text": "Agent: Before dispatching, I need some details. When did you first notice the leak?",
+        "tag": {}
+      },
+      {
+        "time": "00:35",
+        "text": "Customer: Just this morning. It was working fine yesterday!",
+        "tag": {}
+      },
+      {
+        "time": "00:40",
+        "text": "Agent: Have you used any specialty cleaning products recently? Like dishwasher salts or descalers?",
+        "tag": {}
+      },
+      {
+        "time": "00:45",
+        "text": "Customer: No, just regular tablets. Wait... maybe some vinegar rinse last week?",
+        "tag": {
+          "mild_warning": "Contradictory answers"
+        }
+      },
+      {
+        "time": "00:50",
+        "text": "Agent: Vinegar could affect seals if overused. Which model do you have?",
+        "tag": {}
+      },
+      {
+        "time": "00:55",
+        "text": "Customer: It's a Bosch... uh, the 800 Series I think? From 2022.",
+        "tag": {}
+      },
+      {
+        "time": "01:00",
+        "text": "Agent: Our records show you purchased this policy 11 months ago. When was the dishwasher installed?",
+        "tag": {}
+      },
+      {
+        "time": "01:05",
+        "text": "Customer: Original kitchen install in 2022. Came with the house.",
+        "tag": {}
+      },
+      {
+        "time": "01:10",
+        "text": "Agent: Do you have the purchase invoice or installation certificate?",
+        "tag": {}
+      },
+      {
+        "time": "01:15",
+        "text": "Customer: The previous owners left paperwork somewhere... Can't you just send the engineer?",
+        "tag": {
+          "critical": "Avoids documentation"
+        }
+      },
+      {
+        "time": "01:20",
+        "text": "Agent: We need to verify first - Bosch offers 5-year warranties on their appliances. Have you contacted them?",
+        "tag": {}
+      },
+      {
+        "time": "01:25",
+        "text": "Customer: Their wait time was 3 weeks! I pay YOU for faster service!",
+        "tag": {}
+      },
+      {
+        "time": "01:30",
+        "text": "Agent: Let me check water damage coverage... Have you taken any photos of the leak?",
+        "tag": {}
+      },
+      {
+        "time": "01:35",
+        "text": "Customer: Yes but they're blurry. The unit's still under warranty anyway!",
+        "tag": {}
+      },
+      {
+        "time": "01:40",
+        "text": "Agent: Our policy states we become secondary to manufacturer coverage. Let me conference in Bosch...",
+        "tag": {}
+      },
+      {
+        "time": "01:45",
+        "text": "Customer: No wait! I... I might have voided the warranty. Maybe I used wrong detergent pods?",
+        "tag": {
+          "critical": "Admits potential policy breach"
+        }
+      },
+      {
+        "time": "01:50",
+        "text": "Agent: What specific products have you been using?",
+        "tag": {}
+      },
+      {
+        "time": "01:55",
+        "text": "Customer: Just store-brand tablets. But there's lime scale - our water's very hard here.",
+        "tag": {}
+      },
+      {
+        "time": "02:00",
+        "text": "Agent: Your policy requires annual descaling with approved treatments. Did you...?",
+        "tag": {}
+      },
+      {
+        "time": "02:05",
+        "text": "Customer: Maybe missed a year... Look, are you covering this or not?",
+        "tag": {
+          "warning": "Defensive response"
+        }
+      },
+      {
+        "time": "02:10",
+        "text": "Agent: We'll need to inspect first. Available tomorrow 8AM-12PM?",
+        "tag": {}
+      },
+      {
+        "time": "02:15",
+        "text": "Customer: Can't you come today? I'll have to turn water back on for the inspector!",
+        "tag": {
+          "critical": "Resists inspection timing"
+        }
+      },
+      {
+        "time": "02:20",
+        "text": "Agent: Safety first - we can't risk further damage. Let's schedule for...",
+        "tag": {}
+      },
+      {
+        "time": "02:25",
+        "text": "Customer: Forget it! I'll claim on my home insurance instead!",
+        "tag": {}
+      },
+      {
+        "time": "02:30",
+        "text": "Agent: Mr. Wilson, abandoning this claim could affect your policy renewal. Let me...",
+        "tag": {}
+      },
+      {
+        "time": "02:35",
+        "text": "Customer: Just cancel the whole policy then! This service is useless!",
+        "tag": {}
+      },
+      {
+        "time": "02:40",
+        "text": "Call terminated by customer.",
+        "tag": {}
+      }
+    ]
+  },
+  {
+    "example_id": 4,
+    "source_file": "results/file--5567359177347028679.txt",
+    "product_info": {
+      "name": "Small Appliance Protection Plan",
+      "policy_number": "SA-DG-20240115-3287",
+      "policy_status": "Active (Under Investigation)"
+    },
+    "dialog": [
+      {
+        "time": "00:00",
+        "text": "Agent: Thank you for calling D&G Claims, this is Emily speaking. How can I assist you today?",
+        "tag": {}
+      },
+      {
+        "time": "00:05",
+        "text": "Customer: I need to make a claim on my vacuum cleaner. It's completely broken!",
+        "tag": {}
+      },
+      {
+        "time": "00:10",
+        "text": "Agent: I'm sorry to hear that, Mr...?",
+        "tag": {}
+      },
+      {
+        "time": "00:13",
+        "text": "Customer: Thompson. Harold Thompson. Policy number SA-DG-20240115-3287.",
+        "tag": {}
       },
       {
         "time": "00:18",
-        "text": "Customer: Of course, it's LI-24680."
+        "text": "Agent: Thank you. Let me pull up your policy... Yes, a Cuisinart vacuum cleaner purchased in 2018. Could you describe what happened?",
+        "tag": {}
+      },
+      {
+        "time": "00:28",
+        "text": "Customer: It just stopped working yesterday while I was cleaning. Made a horrible grinding noise then died. Probably the motor.",
+        "tag": {}
+      },
+      {
+        "time": "00:35",
+        "text": "Agent: How old would you say this appliance is, Mr. Thompson?",
+        "tag": {}
+      },
+      {
+        "time": "00:40",
+        "text": "Customer: Oh, not that old. Maybe 2-3 years? I take excellent care of my things.",
+        "tag": {
+          "warning": "Understates age by 4-5 years"
+        }
+      },
+      {
+        "time": "00:45",
+        "text": "Agent: Our records show purchase in 2018 - seven years old. When did you purchase the protection plan?",
+        "tag": {}
+      },
+      {
+        "time": "00:53",
+        "text": "Customer: Earlier this year. Smart decision given how much I use it. Now about my replacement...",
+        "tag": {}
+      },
+      {
+        "time": "01:00",
+        "text": "Agent: Let's first confirm coverage. Could you describe the failure again? Any visible damage?",
+        "tag": {}
+      },
+      {
+        "time": "01:08",
+        "text": "Customer: No DAMAGE. Just stopped working. I need a new model shipped ASAP - same brand.",
+        "tag": {}
+      },
+      {
+        "time": "01:15",
+        "text": "Agent: We'll need to investigate first. Have you attempted any repairs?",
+        "tag": {}
+      },
+      {
+        "time": "01:20",
+        "text": "Customer: Of course not! I'm not a technician. Just replace it under the plan!",
+        "tag": {}
+      },
+      {
+        "time": "01:25",
+        "text": "Agent: Our technician will need to inspect it. When would be convenient for...",
+        "tag": {}
+      },
+      {
+        "time": "01:30",
+        "text": "Customer: Inspection? For a £250 vacuum? That's ridiculous! Just check my claim history - perfect customer!",
+        "tag": {}
+      },
+      {
+        "time": "01:37",
+        "text": "Agent: Our records show 3 claims in the last 18 months - toaster, microwave, and steam iron. All deemed uneconomical to repair.",
+        "tag": {}
+      },
+      {
+        "time": "01:47",
+        "text": "Customer: Coincidence! I use appliances heavily. Are you accusing me of something?",
+        "tag": {}
+      },
+      {
+        "time": "01:52",
+        "text": "Agent: Not at all. Could you send photos of the vacuum? Particularly the motor housing and power cord?",
+        "tag": {}
+      },
+      {
+        "time": "02:00",
+        "text": "Customer: *sighs* Fine, I'll email blurry pictures. The important thing is it doesn't WORK anymore.",
+        "tag": {}
+      },
+      {
+        "time": "02:07",
+        "text": "Agent: While we wait, could you confirm where you purchased it? We need original receipts for claims.",
+        "tag": {}
+      },
+      {
+        "time": "02:13",
+        "text": "Customer: Currys PC World. The receipt is... uh... filed somewhere. I'll look later.",
+        "tag": {}
+      },
+      {
+        "time": "02:18",
+        "text": "Agent: We'll need that for verification. Also, could you describe the failure sequence again?",
+        "tag": {}
+      },
+      {
+        "time": "02:25",
+        "text": "Customer: I told you! Normal use, strange noise, then death. Maybe it overheated? Just process the claim!",
+        "tag": {}
+      },
+      {
+        "time": "02:32",
+        "text": "Agent: Received your photos. I notice multiple dents on the canister and a bent power prong. How did that occur?",
+        "tag": {}
+      },
+      {
+        "time": "02:40",
+        "text": "Customer: Those are old marks! From... uh... storage. Completely irrelevant!",
+        "tag": {}
+      },
+      {
+        "time": "02:45",
+        "text": "Agent: Our engineer notes fresh tool marks near the motor housing. Have you tried opening it?",
+        "tag": {}
+      },
+      {
+        "time": "02:52",
+        "text": "Customer: NO! Maybe my grandson fiddled with it. Kids these days, eh? Still your responsibility!",
+        "tag": {}
+      },
+      {
+        "time": "02:58",
+        "text": "Agent: We'll need to interview household members as part of the investigation. When could...",
+        "tag": {}
+      },
+      {
+        "time": "03:03",
+        "text": "Customer: This is harassment! I pay premiums for SERVICE. Either replace it or cancel my policy!",
+        "tag": {}
+      },
+      {
+        "time": "03:09",
+        "text": "Agent: Mr. Thompson, per our terms: \"We shall not approve claims where there's evidence of intentional damage.\" Forensic analysis shows...",
+        "tag": {}
+      },
+      {
+        "time": "03:18",
+        "text": "Customer: *click*",
+        "tag": {}
+      }
+    ]
+  },
+  {
+    "example_id": 5,
+    "source_file": "results/file-2002898099560553775.txt",
+    "product_info": {
+      "name": "Fridges & Freezers Protection Plan",
+      "policy_number": "FF-DG-202312-7741",
+      "policy_status": "Active (Under Investigation)"
+    },
+    "dialog": [
+      {
+        "time": "00:00",
+        "text": "Agent: Thank you for calling D&G Appliance Protection. How can I assist?",
+        "tag": {}
+      },
+      {
+        "time": "00:05",
+        "text": "Customer: I need to insure my new GE freezer immediately. It's still under manufacturer warranty but I want extra coverage.",
+        "tag": {}
+      },
+      {
+        "time": "00:15",
+        "text": "Agent: Certainly. When was the appliance purchased?",
+        "tag": {}
+      },
+      {
+        "time": "00:20",
+        "text": "Customer: Just last month - November 2023. Here's the receipt.",
+        "tag": {
+          "warning": "Provides altered 2023 receipt for 2019 appliance"
+        }
+      },
+      {
+        "time": "00:30",
+        "text": "Agent: Our system shows this model was discontinued in 2020. Are you certain of purchase date?",
+        "tag": {}
+      },
+      {
+        "time": "00:35",
+        "text": "Customer: Yes, it was old stock. The store had remaining units.",
+        "tag": {
+          "mild_warning": "Plausible but unlikely explanation"
+        }
+      },
+      {
+        "time": "00:45",
+        "text": "Agent: We'll need to verify warranty status directly with GE. May we contact them?",
+        "tag": {}
+      },
+      {
+        "time": "00:50",
+        "text": "Customer: That's unnecessary - here's the warranty certificate.",
+        "tag": {
+          "critical": "Provides forged document dated 2023"
+        }
+      },
+      {
+        "time": "00:00",
+        "text": "Agent: D&G Claims, how can I help?",
+        "tag": {}
+      },
+      {
+        "time": "00:05",
+        "text": "Customer: My freezer stopped cooling! I need repair under my policy REF933455.",
+        "tag": {}
+      },
+      {
+        "time": "00:10",
+        "text": "Agent: Checking... Ms. Thompson, your policy requires active manufacturer warranty. Let me confirm with GE.",
+        "tag": {}
+      },
+      {
+        "time": "00:15",
+        "text": "Customer: No need - here's the warranty valid until 2024!",
+        "tag": {
+          "critical": "Shows manipulated PDF document"
+        }
+      },
+      {
+        "time": "00:25",
+        "text": "Agent: Our records show this serial number (GFE-2020-MCR-5573) was manufactured June 2020.",
+        "tag": {}
+      },
+      {
+        "time": "00:30",
+        "text": "Customer: That's impossible! I have purchase proof from 2023!",
+        "tag": {}
+      },
+      {
+        "time": "00:40",
+        "text": "Agent: GE's database confirms warranty expired December 2021. Your policy is void due to material misrepresentation.",
+        "tag": {}
+      },
+      {
+        "time": "00:45",
+        "text": "Customer: This is ridiculous! I'll file with the Financial Ombudsman!",
+        "tag": {}
+      }
+    ]
+  },
+  {
+    "example_id": 6,
+    "source_file": "results/file-3419591170285622336.txt",
+    "product_info": {
+      "name": "Small Appliance Care Plan",
+      "policy_number": "APP-DG-20200116-9133",
+      "policy_status": "Active (Under Fraud Investigation)"
+    },
+    "dialog": [
+      {
+        "time": "00:00",
+        "text": "Agent: Good morning, D&G Appliance Care. How can I assist?",
+        "tag": {}
+      },
+      {
+        "time": "00:05",
+        "text": "Client: My blender's broken. Need a replacement immediately.",
+        "tag": {}
+      },
+      {
+        "time": "00:10",
+        "text": "Agent: Sorry to hear that. May I have your policy number?",
+        "tag": {}
+      },
+      {
+        "time": "00:15",
+        "text": "Client: APP-DG-20200116-9133. It's urgent - I run a smoothie business!",
+        "tag": {}
+      },
+      {
+        "time": "00:20",
+        "text": "Agent: Let me check... Mr. Carter, this policy expired in 2023.",
+        "tag": {
+          "critical": "Expired policy claim attempt"
+        }
+      },
+      {
+        "time": "00:25",
+        "text": "Client: No, that's impossible! I paid for extended coverage!",
+        "tag": {}
+      },
+      {
+        "time": "00:30",
+        "text": "Agent: Our records show no extension. When did you purchase the appliance?",
+        "tag": {}
+      },
+      {
+        "time": "00:35",
+        "text": "Client: Last year! 2024! It's under your 3-year warranty!",
+        "tag": {}
+      },
+      {
+        "time": "00:40",
+        "text": "Agent:  Could you confirm purchase date?",
+        "tag": {
+          "mild_warning": "Serial number MR-P9000-2020-0915 suggests 2020 manufacture"
+        }
+      },
+      {
+        "time": "00:45",
+        "text": "Client: *rustling papers* Here's my receipt - January 15, 2024!",
+        "tag": {}
+      },
+      {
+        "time": "00:50",
+        "text": "Agent:  This appears altered.",
+        "tag": {
+          "critical": "Digital receipt metadata shows creation date 2020-01-10"
+        }
+      },
+      {
+        "time": "00:55",
+        "text": "Client: Your system must be wrong! I want a technician now!",
+        "tag": {}
+      },
+      {
+        "time": "01:00",
+        "text": "Agent: Could you describe the damage?",
+        "tag": {}
+      },
+      {
+        "time": "01:05",
+        "text": "Client: Motor's dead. Smoke came out when I tried crushing ice.",
+        "tag": {}
+      },
+      {
+        "time": "01:10",
+        "text": "Agent:",
+        "tag": {
+          "mild_warning": "Our records show last service in 2022 noted \"motor functioning at 90%\""
+        }
+      },
+      {
+        "time": "01:15",
+        "text": "Client: I haven't used it much since then! It just failed!",
+        "tag": {}
+      },
+      {
+        "time": "01:20",
+        "text": "Agent: We'll need to inspect the unit. Could you share live video?",
+        "tag": {}
+      },
+      {
+        "time": "01:25",
+        "text": "Client: Can't right now - blender's at my commercial kitchen.",
+        "tag": {}
+      },
+      {
+        "time": "01:30",
+        "text": "Agent:  Could you confirm usage?",
+        "tag": {
+          "warning": "Policy prohibits commercial use"
+        }
+      },
+      {
+        "time": "01:35",
+        "text": "Client: I... I meant home kitchen! Slip of the tongue!",
+        "tag": {}
+      },
+      {
+        "time": "01:40",
+        "text": "Agent: Please send clear photos of: 1. Serial plate 2. Motor assembly 3. Power cord",
+        "tag": {}
+      },
+      {
+        "time": "01:45",
+        "text": "Client: *sends blurry images* There! Happy now?",
+        "tag": {}
+      },
+      {
+        "time": "01:50",
+        "text": "Agent:",
+        "tag": {
+          "critical": "Image analysis shows mismatched serial number stickers"
+        }
+      },
+      {
+        "time": "01:55",
+        "text": "Client: This is ridiculous! I demand escalation!",
+        "tag": {}
+      },
+      {
+        "time": "02:00",
+        "text": "Agent: Let me connect you with our fraud investigation team...",
+        "tag": {}
+      },
+      {
+        "time": "02:05",
+        "text": "Client: *hangs up abruptly*",
+        "tag": {}
       }
     ]
   }

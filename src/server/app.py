@@ -216,6 +216,7 @@ def create_app() -> FastAPI:
             error_msg = "处理文件失败，请确认文件包含可识别的语音。"
             if "Unable to create captions" in str(e):
                 error_msg = "未检测到语音，请确认音频内容清晰。"
+            print(f"Error in upload_video: {str(e)}")
             return JSONResponse(status_code=500, content={"success": False, "error": error_msg})
 
     @app.post("/search")

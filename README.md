@@ -61,6 +61,40 @@ This project uses [llama.cpp](https://github.com/ggerganov/llama.cpp) for genera
    ```
 4. **Update your `.env` file** with the correct embedding API URL (default: `http://localhost:8080`)
 
+### llama.cpp Embedding API Format
+
+The llama.cpp server expects embedding requests in the following format:
+
+```json
+POST /embedding
+{
+    "content": "text to embed"
+}
+```
+
+The response will contain the embedding vector:
+
+```json
+{
+    "embedding": [0.123, 0.456, ...]
+}
+```
+
+### Troubleshooting Embeddings
+
+If you encounter issues with the embedding API:
+
+1. **Check that the llama-server is running** with the `--embeddings` flag
+2. **Verify the API URL** in your `.env` file matches the server address
+3. **Test the API directly** using curl:
+   ```bash
+   curl -X POST http://localhost:8080/embedding \
+     -H "Content-Type: application/json" \
+     -d '{"content":"test text"}'
+   ```
+4. **Check server logs** for any error messages
+5. **Try using the FakeEmbeddings provider** for testing by setting `EMBEDDING_PROVIDER=fake` in your `.env` file
+
 ### Using Alternative Embedding Providers
 
 The project is designed to make it easy to switch between different embedding providers:

@@ -3,565 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAG Project - Audio Transcription & Semantic Search</title>
-    <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --accent-color: #4fc3a1;
-            --background-color: #f8f9fa;
-            --text-color: #333;
-            --border-color: #ddd;
-            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            margin: 0;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        h1 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .description {
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .card-title {
-            color: var(--secondary-color);
-            margin-top: 0;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-        
-        .upload-section, .search-section, .results-section {
-            margin-bottom: 30px;
-        }
-        
-        .file-input-container {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        
-        .file-input-label {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .file-input-label:hover {
-            background-color: var(--secondary-color);
-        }
-        
-        #file-input {
-            position: absolute;
-            left: -9999px;
-        }
-        
-        .file-name {
-            margin-left: 10px;
-            font-style: italic;
-        }
-        
-        .button {
-            padding: 10px 20px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .button:hover {
-            background-color: var(--secondary-color);
-        }
-        
-        .button:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
-        }
-        
-        .search-input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-        
-        .transcript-container {
-            max-height: 400px;
-            overflow-y: auto;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .transcript-line {
-            margin-bottom: 10px;
-            padding: 8px;
-            border-radius: 4px;
-        }
-        
-        .speaker-1 {
-            background-color: #e6f3ff;
-        }
-        
-        .speaker-2 {
-            background-color: #f0f0f0;
-        }
-        
-        .timestamp {
-            font-size: 0.8em;
-            color: #888;
-            margin-right: 10px;
-        }
-        
-        .match-item {
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            margin-bottom: 10px;
-            background-color: #f9f9f9;
-        }
-        
-        .match-score {
-            font-size: 0.8em;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-        
-        .examples-section {
-            margin-bottom: 20px;
-        }
-        
-        .example-item {
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #f0f7ff;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        
-        .example-item:hover {
-            background-color: #e0f0ff;
-        }
-        
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        .tabs {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-        }
-        
-        .tab.active {
-            border-bottom: 2px solid var(--accent-color);
-            font-weight: bold;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-    </style>
+    <title>Audio/Video Transcription + Semantic Search</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>RAG Project - Audio Transcription & Semantic Search</h1>
-            <p class="description">
-                Upload an audio/video file for transcription or try our example files. 
-                Then use semantic search to find relevant information in the transcript.
-            </p>
-        </header>
-        
-        <div class="card">
-            <h2 class="card-title">Audio/Video Transcription</h2>
-            
-            <div class="examples-section">
-                <h3>Try an Example:</h3>
-                <div id="examples-container">
-                    <p>Loading examples...</p>
-                </div>
-            </div>
-            
-            <div class="upload-section">
-                <h3>Upload Your Own File:</h3>
-                <div class="file-input-container">
-                    <label for="file-input" class="file-input-label">Choose File</label>
-                    <input type="file" id="file-input" accept="audio/*,video/*">
-                    <span class="file-name" id="file-name">No file chosen</span>
-                </div>
-                
-                <div>
-                    <label for="speakers-expected">Expected Number of Speakers (Optional):</label>
-                    <input type="number" id="speakers-expected" min="0" max="10" value="0">
-                </div>
-                
-                <button id="upload-button" class="button" disabled>
-                    <span id="upload-text">Upload & Transcribe</span>
-                    <span id="upload-loading" class="loading hidden"></span>
-                </button>
-            </div>
-        </div>
-        
-        <div class="card results-section hidden" id="results-section">
-            <h2 class="card-title">Transcription Results</h2>
-            
-            <div class="tabs">
-                <div class="tab active" data-tab="transcript">Transcript</div>
-                <div class="tab" data-tab="srt">SRT</div>
-                <div class="tab" data-tab="vtt">VTT</div>
-            </div>
-            
-            <div class="tab-content active" id="transcript-tab">
-                <div class="transcript-container" id="transcript-container"></div>
-            </div>
-            
-            <div class="tab-content" id="srt-tab">
-                <pre id="srt-content" style="white-space: pre-wrap; max-height: 400px; overflow-y: auto;"></pre>
-            </div>
-            
-            <div class="tab-content" id="vtt-tab">
-                <pre id="vtt-content" style="white-space: pre-wrap; max-height: 400px; overflow-y: auto;"></pre>
-            </div>
-            
-            <div class="search-section">
-                <h3>Search in Transcript:</h3>
-                <input type="text" id="search-input" class="search-input" placeholder="Enter your search query...">
-                <button id="search-button" class="button">
-                    <span id="search-text">Search</span>
-                    <span id="search-loading" class="loading hidden"></span>
-                </button>
-            </div>
-            
-            <div id="search-results" class="hidden">
-                <h3>Search Results:</h3>
-                <div id="matches-container"></div>
-            </div>
+<div class="container">
+    <!-- Examples Section -->
+    <div class="examples-section">
+        <h3><i class="fas fa-lightbulb"></i> Example Cases</h3>
+        <div class="examples-container">
+            <!-- Dynamically loaded by script.js -->
         </div>
     </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // DOM elements
-            const fileInput = document.getElementById('file-input');
-            const fileName = document.getElementById('file-name');
-            const uploadButton = document.getElementById('upload-button');
-            const uploadText = document.getElementById('upload-text');
-            const uploadLoading = document.getElementById('upload-loading');
-            const resultsSection = document.getElementById('results-section');
-            const transcriptContainer = document.getElementById('transcript-container');
-            const srtContent = document.getElementById('srt-content');
-            const vttContent = document.getElementById('vtt-content');
-            const searchInput = document.getElementById('search-input');
-            const searchButton = document.getElementById('search-button');
-            const searchText = document.getElementById('search-text');
-            const searchLoading = document.getElementById('search-loading');
-            const searchResults = document.getElementById('search-results');
-            const matchesContainer = document.getElementById('matches-container');
-            const examplesContainer = document.getElementById('examples-container');
-            const speakersExpected = document.getElementById('speakers-expected');
-            
-            // Current transcript data
-            let currentTranscript = [];
-            
-            // Load examples
-            fetchExamples();
-            
-            // File input change handler
-            fileInput.addEventListener('change', function() {
-                if (fileInput.files.length > 0) {
-                    fileName.textContent = fileInput.files[0].name;
-                    uploadButton.disabled = false;
-                } else {
-                    fileName.textContent = 'No file chosen';
-                    uploadButton.disabled = true;
-                }
-            });
-            
-            // Upload button click handler
-            uploadButton.addEventListener('click', function() {
-                if (fileInput.files.length === 0) return;
-                
-                const file = fileInput.files[0];
-                const formData = new FormData();
-                formData.append('file', file);
-                formData.append('speakers_expected', speakersExpected.value);
-                
-                // Show loading state
-                uploadText.classList.add('hidden');
-                uploadLoading.classList.remove('hidden');
-                uploadButton.disabled = true;
-                
-                fetch('/upload', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Reset loading state
-                    uploadText.classList.remove('hidden');
-                    uploadLoading.classList.add('hidden');
-                    uploadButton.disabled = false;
-                    
-                    if (data.success) {
-                        // Store transcript data
-                        currentTranscript = data.transcript;
-                        
-                        // Display transcript
-                        displayTranscript(data.transcript);
-                        
-                        // Display SRT and VTT
-                        srtContent.textContent = data.srt;
-                        vttContent.textContent = data.vtt;
-                        
-                        // Show results section
-                        resultsSection.classList.remove('hidden');
-                    } else {
-                        alert('Error: ' + data.error);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    uploadText.classList.remove('hidden');
-                    uploadLoading.classList.add('hidden');
-                    uploadButton.disabled = false;
-                    alert('An error occurred during upload. Please try again.');
-                });
-            });
-            
-            // Search button click handler
-            searchButton.addEventListener('click', function() {
-                const query = searchInput.value.trim();
-                if (!query) return;
-                
-                // Create text from transcript
-                const text = currentTranscript.map(item => item.text).join(' ');
-                
-                // Show loading state
-                searchText.classList.add('hidden');
-                searchLoading.classList.remove('hidden');
-                searchButton.disabled = true;
-                
-                fetch('/search', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        query: query,
-                        text: text
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Reset loading state
-                    searchText.classList.remove('hidden');
-                    searchLoading.classList.add('hidden');
-                    searchButton.disabled = false;
-                    
-                    if (data.success) {
-                        // Display matches
-                        displayMatches(data.matches);
-                        
-                        // Show search results
-                        searchResults.classList.remove('hidden');
-                    } else {
-                        alert('Error: ' + data.error);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    searchText.classList.remove('hidden');
-                    searchLoading.classList.add('hidden');
-                    searchButton.disabled = false;
-                    alert('An error occurred during search. Please try again.');
-                });
-            });
-            
-            // Tab switching
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // Remove active class from all tabs
-                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                    
-                    // Add active class to clicked tab
-                    this.classList.add('active');
-                    document.getElementById(`${this.dataset.tab}-tab`).classList.add('active');
-                });
-            });
-            
-            // Helper functions
-            function displayTranscript(transcript) {
-                transcriptContainer.innerHTML = '';
-                
-                transcript.forEach(item => {
-                    const line = document.createElement('div');
-                    line.className = `transcript-line speaker-${item.speaker}`;
-                    
-                    const timestamp = document.createElement('span');
-                    timestamp.className = 'timestamp';
-                    timestamp.textContent = formatTime(item.start);
-                    
-                    const text = document.createElement('span');
-                    text.textContent = item.text;
-                    
-                    line.appendChild(timestamp);
-                    line.appendChild(text);
-                    transcriptContainer.appendChild(line);
-                });
-            }
-            
-            function displayMatches(matches) {
-                matchesContainer.innerHTML = '';
-                
-                if (matches.length === 0) {
-                    matchesContainer.innerHTML = '<p>No matches found.</p>';
-                    return;
-                }
-                
-                matches.forEach(match => {
-                    const matchItem = document.createElement('div');
-                    matchItem.className = 'match-item';
-                    
-                    const matchText = document.createElement('div');
-                    matchText.textContent = match.text;
-                    
-                    const matchScore = document.createElement('div');
-                    matchScore.className = 'match-score';
-                    matchScore.textContent = `Similarity: ${(match.score * 100).toFixed(2)}%`;
-                    
-                    matchItem.appendChild(matchText);
-                    matchItem.appendChild(matchScore);
-                    matchesContainer.appendChild(matchItem);
-                });
-            }
-            
-            function formatTime(ms) {
-                const totalSeconds = Math.floor(ms / 1000);
-                const minutes = Math.floor(totalSeconds / 60);
-                const seconds = totalSeconds % 60;
-                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }
-            
-            function fetchExamples() {
-                fetch('/examples')
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success && data.examples.length > 0) {
-                            examplesContainer.innerHTML = '';
-                            
-                            data.examples.forEach(example => {
-                                const exampleItem = document.createElement('div');
-                                exampleItem.className = 'example-item';
-                                exampleItem.textContent = example.name;
-                                exampleItem.dataset.id = example.id;
-                                
-                                exampleItem.addEventListener('click', function() {
-                                    loadExample(example.id);
-                                });
-                                
-                                examplesContainer.appendChild(exampleItem);
-                            });
-                        } else {
-                            examplesContainer.innerHTML = '<p>No examples available.</p>';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error fetching examples:', error);
-                        examplesContainer.innerHTML = '<p>Failed to load examples.</p>';
-                    });
-            }
-            
-            function loadExample(exampleId) {
-                fetch(`/convert-example/${exampleId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            // Store transcript data
-                            currentTranscript = data.transcript;
-                            
-                            // Display transcript
-                            displayTranscript(data.transcript);
-                            
-                            // Display SRT and VTT
-                            srtContent.textContent = data.srt;
-                            vttContent.textContent = data.vtt;
-                            
-                            // Show results section
-                            resultsSection.classList.remove('hidden');
-                        } else {
-                            alert('Error: ' + data.error);
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error loading example:', error);
-                        alert('An error occurred while loading the example. Please try again.');
-                    });
-            }
-        });
-    </script>
+
+    <!-- Record Section -->
+    <div class="record-section">
+        <div class="record-options">
+            <div class="record-buttons">
+                <button id="record-video" class="record-button">
+                    <i class="fas fa-video"></i> Record Video
+                </button>
+                <button id="record-audio" class="record-button">
+                    <i class="fas fa-microphone"></i> Record Audio
+                </button>
+            </div>
+            <div class="speaker-options">
+                <label for="speaker-count"><i class="fas fa-users"></i> Expected Number of Speakers:</label>
+                <select id="speaker-count" class="speaker-select">
+                    <option value="0">Auto Detect</option>
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People</option>
+                    <option value="3">3 People</option>
+                    <option value="4">4 People</option>
+                    <option value="5">5 People</option>
+                </select>
+            </div>
+        </div>
+        <div class="recording-controls" style="display: none;">
+            <button id="stop-recording" class="record-button">
+                <i class="fas fa-stop"></i> Stop Recording
+            </button>
+            <span id="recording-time">00:00</span>
+        </div>
+        <video id="video-preview" style="display: none;" autoplay muted></video>
+        <div id="audio-visualizer" style="display: none;">
+            <canvas id="audio-canvas"></canvas>
+        </div>
+    </div>
+
+    <!-- Header + Function Controls -->
+    <div class="header">
+        <h1><i class="fas fa-file-alt"></i> Transcribed Text</h1>
+        <div class="header-controls">
+            <div class="mode-select-container">
+                <label for="mode-select"><i class="fas fa-cog"></i> Function Mode:</label>
+                <select id="mode-select" class="speaker-select">
+                    <option value="audioJump" selected>Audio Jump</option>
+                    <option value="termsSearch">Search Terms</option>
+                    <option value="placeholder">Reserved Function (rerank)</option>
+                </select>
+            </div>
+
+            <div class="switch-container">
+                <label class="switch">
+                    <input type="checkbox" id="show-speakers" checked>
+                    <span class="slider"></span>
+                </label>
+                <span class="switch-label"><i class="fas fa-user"></i> Show Speakers</span>
+            </div>
+
+            <button id="clear-all" class="clear-button">
+                <i class="fas fa-trash"></i> Clear
+            </button>
+        </div>
+    </div>
+
+    <!-- Upload Section -->
+    <div class="upload-section" id="upload-section">
+        <div class="upload-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+        </div>
+        <h2>Upload Audio/Video</h2>
+        <p>Drag files here or click to select files</p>
+        <input type="file" id="file-input" style="display: none" accept="video/*,audio/*">
+    </div>
+
+    <!-- Loading State -->
+    <div class="loading">
+        <div class="loading-spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <!-- Error Message -->
+    <div class="error-message"></div>
+
+    <!-- Transcript Section -->
+    <div class="transcript-section" style="display: none;">
+        <div class="media-player" style="display: none;">
+            <audio id="audio-player" controls></audio>
+            <video id="video-player" controls style="display: none;"></video>
+        </div>
+        <div class="transcript-container">
+            <div id="main-search-results"></div>
+            <div id="original-text-wrapper" class="original-text-wrapper"></div>
+        </div>
+        <div class="download-buttons">
+            <button id="download-srt" class="download-button" disabled>
+                <i class="fas fa-download"></i> Download SRT
+            </button>
+            <button id="download-vtt" class="download-button" disabled>
+                <i class="fas fa-download"></i> Download VTT
+            </button>
+        </div>
+    </div>
+
+    <!-- Search Side Panel -->
+    <div class="search-side-panel">
+        <button class="close-button">
+            <i class="fas fa-times"></i>
+        </button>
+        <div id="side-panel-results" class="search-results-container"></div>
+    </div>
+</div>
+
+<!-- Terms Side Panel -->
+<div class="terms-side-panel">
+    <button class="close-button">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="panel-header">
+        <h3><i class="fas fa-file-alt"></i> Insurance Terms Original Text</h3>
+    </div>
+    <div id="terms-content"></div>
+</div>
+
+<!-- Search Side Panel -->
+<div class="search-side-panel">
+    <button class="close-button">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="panel-header">
+        <h3><i class="fas fa-search"></i> Search Results</h3>
+    </div>
+    <div id="side-panel-results" class="search-results-container"></div>
+</div>
+
+<script src="/static/script.js"></script>
 </body>
 </html>

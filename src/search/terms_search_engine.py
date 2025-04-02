@@ -66,12 +66,27 @@ class TermsSearchEngine:
         """
         provider = provider.lower()
         if provider == "llama":
-            return LlamaEmbeddings(api_url)
+            # Try to connect to the llama.cpp server, fall back to FakeEmbeddings if not available
+            try:
+                import requests
+                # Test connection with a simple request
+                response = requests.get(f"{api_url}/health", timeout=2)
+                if response.status_code == 200:
+                    print(f"[TermsSearchEngine] Successfully connected to llama.cpp server at {api_url}")
+                    return LlamaEmbeddings(api_url)
+                else:
+                    print(f"[TermsSearchEngine] Warning: llama.cpp server returned status code {response.status_code}")
+            except Exception as e:
+                print(f"[TermsSearchEngine] Warning: Could not connect to llama.cpp server at {api_url}: {str(e)}")
+                print("[TermsSearchEngine] Falling back to FakeEmbeddings")
+            
+            # If we get here, there was an issue connecting to the server
+            return FakeEmbeddings(dimension)
         elif provider == "fake":
             return FakeEmbeddings(dimension)
         else:
-            print(f"[TermsSearchEngine] Unknown provider '{provider}', falling back to LlamaEmbeddings")
-            return LlamaEmbeddings(api_url)
+            print(f"[TermsSearchEngine] Unknown provider '{provider}', falling back to FakeEmbeddings")
+            return FakeEmbeddings(dimension)
 
     def build_index(self, markdown_path: str) -> None:
         """
