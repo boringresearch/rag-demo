@@ -108,7 +108,7 @@ The project is designed to make it easy to switch between different embedding pr
 ## Project Structure
 
 ```
-my-open-rag-project/
+rag-demo/
 ├── LICENSE
 ├── README.md
 ├── CODE_OF_CONDUCT.md
@@ -139,7 +139,3 @@ my-open-rag-project/
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Code of Conduct
-
-We've adopted a Code of Conduct to ensure a welcoming community. Please see [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
