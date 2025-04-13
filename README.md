@@ -29,7 +29,7 @@ A FastAPI application that demonstrates **Retrieval-Augmented Generation (RAG)**
     .\venv\Scripts\activate   # on Windows
     ```
 
-3. **Install requirements**:
+3. **Install requirements (python<=3.11)**:
     ```bash
     pip install -r requirements.txt
     ```
